@@ -193,6 +193,7 @@ code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding
             <div><label for="gcost">DNA synthesis, cents per base</label><input type="number" id="gcost" value="7" step="1"></div>
           </div>
           <div class="stats" id="scale-stats"></div>
+          <p class="note" style="margin-top:10px">The DNA order is the cheapest part and the easiest to quote. It excludes sequence verification and error correction, assembly into ~10 kb then ~100 kb fragments, the rounds of chromosome replacement, screening, diagnosing and repairing the segments that fail, and adaptive evolution — all of which dominate the real cost. Syn57 took about a decade from published design to a viable strain.</p>
           <div id="scale-verdict" style="margin-top:15px"></div>
           <h3 style="margin-top:20px">For comparison — what has actually been built</h3>
           <div class="scroll"><table><thead><tr><th>Strain</th><th>Codons removed</th><th class="num">Edits</th><th>Method</th><th>Outcome</th></tr></thead><tbody>
@@ -501,7 +502,7 @@ function renderScale(R){
     ['Edits genome-wide', fmt(gEdits), `at ${(freq*100).toFixed(2)}% of codons`],
     ['Edits per gene', perGene.toFixed(1), 'average'],
     ['Genome codons', fmt(Math.round(genomeCodons)), `${fmt(gsize)} coding bases`],
-    ['Synthesis cost', '$'+fmt(Math.round(synCost)), `at ${cost}c per base`]
+    ['DNA order', '$'+fmt(Math.round(synCost)), `raw DNA only, at ${cost}c per base`]
   ].map(([k,v,d])=>`<div class="stat"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`).join('');
 
   let v;
