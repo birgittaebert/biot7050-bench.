@@ -443,7 +443,7 @@ function render(){
     ['Shine–Dalgarno cores (GGAGG / AGGAG)', countMotifs(B,SD), countMotifs(A,SD),
      'Gained cores can create spurious internal translation starts; lost ones can silence a downstream gene in an operon.'],
     ['−10 promoter-like hexamers (≤1 mismatch, both strands)', count10box(B), count10box(A),
-     'Coding sequence carries internal promoters. Recoding both destroys real ones and creates cryptic antisense ones.'],
+     'Coding sequence carries internal promoters. A synonymous change can weaken a real one, or create a new promoter-like sequence. The scan covers both strands, so a match on the template strand would drive transcription backwards across the gene.'],
     ['Out-of-frame stop codons', offFrameStops(B), offFrameStops(A),
      'Proxy for disrupting overlapping ORFs and frameshift-dependent products.'],
     ['Rare codons (<10 per thousand)', rareLoad(codsB), rareLoad(codsA),
